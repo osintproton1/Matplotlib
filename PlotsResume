@@ -1,0 +1,30 @@
+# Plotting sales of a company over a set of years using line graph
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import style
+
+style.use("dark_background")
+
+income_ticks = list(range(90, 116))
+
+# Sales amounts for each company
+stock_a = [100, 102, 99, 101, 101, 100, 102]
+stock_b = [90, 95, 102, 104, 105, 103, 109]
+stock_c = [110, 115, 100, 105, 100, 98, 95]
+
+# Naming the companies
+plt.plot(stock_a, label="Company1")
+plt.plot(stock_b, label="Company2")
+plt.plot(stock_c, label="Company3")
+
+# Adjusting the font sizes, fot name and x/y labels
+plt.title("Income Of Companies", fontsize=25, fontname="FreeSerif")
+plt.xlabel("Year", fontsize=10, fontname="FreeSerif")
+plt.ylabel("Yearly Income in USD")
+plt.yticks(income_ticks, [f"${x}k" for x in income_ticks]) 
+plt.legend()
+
+# call the plot
+plt.show()
+
